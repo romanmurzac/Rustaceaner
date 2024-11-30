@@ -15,16 +15,16 @@ Here will be described the whole path from first search about Rust to the time t
 - [Guess number](#guess-number)
 
 ## Information
-***Search:*** How hard is to learn Rust.\
-**Prompt:** rust compared to other languages.\
+**Search:** How hard is to learn Rust.\
+**Prompt:** *rust compared to other languages*.\
 **Result**: [Rust difficulty in comparison to other languages.](https://www.reddit.com/r/rust/comments/op2r7e/rust_difficulty_in_comparison_to_other_languages/?rdt=40201)
 
 **Search:** How popular is the language.\
-**Prompt:** rust popularity.\
+**Prompt:** *rust popularity*.\
 **Result:** [Rust continues to be the most-admired programming language](https://www.reddit.com/r/rust/comments/1eb55ab/rust_continues_to_be_the_mostadmired_programming/).
 
 **Search:** How paid is Rust.\
-**Prompt:** rust salary.\
+**Prompt:** *rust salary*.\
 **Result:** [Rust Developer salary](https://web3.career/web3-salaries/rust-developer).
 
 ## Learning path
