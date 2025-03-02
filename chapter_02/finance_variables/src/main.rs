@@ -3,34 +3,28 @@ use std::io::{self, Write};
 fn main() {
     println!("Welcome to the Personal Finance Tracker!");
 
-    // Asking for the user's name.
-    print!("Enter your name: ");
+    println!("Enter your name: ");
+    let mut name: String = String::new();
+
+    io::stdin().read_line(&mut name).unwrap();
+
+    println!(
+        "Hello, {}! Let's start tracking your finances.",
+        name.trim()
+    );
+
+    let mut balance: f64 = 0.0;
+
+    println!("Enter your initial balance: ");
+    let mut user_balance: String = String::new();
+
     io::stdout().flush().expect("Failed to flush output");
+    std::io::stdin()
+        .read_line(&mut user_balance)
+        .expect("Failed to read line");
 
-    let mut name = String::new();
-    io::stdin().read_line(&mut name).expect("Failed to read input");
-
-    // Remove any trailing newline or spaces.
-    let name = name.trim();
-
-    println!("Hello, {}! Let's start tracking your finances.", name);
-
-    // Asking for the initial balance.
-    let mut balance = 0.0;
-    print!("Enter your initial balance: ");
-    io::stdout().flush().expect("Failed to flush output");
-
-    let mut user_input = String::new();
-    io::stdin().read_line(&mut user_input).expect("Failed to read input");
-
-    // Convert user input to f64.
-    balance = match user_input.trim().parse::<f64>() {
-        Ok(amount) => amount,
-        Err(_) => {
-            println!("Invalid input! Setting balance to $0.00");
-            0.0
-        }
-    };
+    let user_balance: f64 = user_balance.trim().parse().unwrap();
+    balance += user_balance;
 
     println!("Your starting balance is: ${:.2}", balance);
 }
