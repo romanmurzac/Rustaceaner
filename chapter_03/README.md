@@ -1,11 +1,10 @@
-### 3. Data Types - Transactions and Categories
+## Chapter 3. Data Types - Transactions and Categories
 
 **Goal:** Learn Rust data types by defining transaction amounts and categories.
 
-#### Task
-
+### Task
 1. Create a Rust project:
-   ```sh
+   ```shell
    cargo new finance_data_types
    ```
 2. Modify `main.rs` to:
@@ -13,8 +12,7 @@
    - Define a `category` variable as a string (e.g., `"Food"`)
    - Print `"Transaction: $<amount> spent on <category>."`
 
-#### Output
-
+### Output
 ```
 Transaction: $45.99 spent on Food.
 ```

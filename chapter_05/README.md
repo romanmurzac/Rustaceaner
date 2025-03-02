@@ -1,11 +1,10 @@
-### 5. Control Flow - Validating Transactions
+## Chapter 5. Control Flow - Validating Transactions
 
 **Goal:** Use conditionals to validate user input.
 
-#### Task
-
+### Task
 1. Create a Rust project:
-   ```sh
+   ```shell
    cargo new finance_control_flow
    ```
 2. Modify `main.rs` to:
@@ -13,14 +12,15 @@
    - If the amount is negative, print `"Invalid amount!"`
    - Otherwise, print `"Transaction accepted: $<amount>"`
 
-#### Output
-
-```
-Enter transaction amount: -5.00
-Invalid amount!
-```
-
+### Output
+✅ Valid Input:
 ```
 Enter transaction amount: 30.00
 Transaction accepted: $30.00
+```
+
+❌ Invalid Input:
+```
+Enter transaction amount: -5.00
+Invalid amount!
 ```

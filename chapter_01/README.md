@@ -4,14 +4,13 @@
 
 ### Task
 1. Initialize a new Rust project:
-```sh
+```shell
 cargo new finance_tracker_cli
 ```
-
 2. Modify `main.rs` to:
-* Print a welcome message: `"Welcome to the Personal Finance Tracker!"`
-* Prompt the user for their name and read input
-* Greet the user with `"Hello, <name>! Let's start tracking your finances."`
+   - Print a welcome message: `"Welcome to the Personal Finance Tracker!"`
+   - Prompt the user for their name and read input
+   - Greet the user with `"Hello, <name>! Let's start tracking your finances."`
 
 ### Output
 ```

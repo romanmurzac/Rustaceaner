@@ -4,15 +4,14 @@
 
 ### Task
 1. Create a new Rust project:
-```sh
+```shell
 cargo new finance_variables
 ```
-
 2. Modify `main.rs` to:
-* Declare a **mutable** variable balance initialized to `0.0`
-* Ask the user to input an initial balance
-* Update `balance` with the user input
-* Print `"Your starting balance is: $<balance>"`
+   - Declare a **mutable** variable balance initialized to `0.0`
+   - Ask the user to input an initial balance
+   - Update `balance` with the user input
+   - Print `"Your starting balance is: $<balance>"`
 
 ### Output
 ```
