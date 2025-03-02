@@ -1,1 +1,0 @@
-searchState.loadedDescShard("chapter_3", 0, "")

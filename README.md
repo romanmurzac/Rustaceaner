@@ -1,165 +1,97 @@
 # Rustaceaner
 
-My journey in learning the **Rust** programming language.
+This GitHub repository will provide hands-on exercises aligned with a Udemy Rust course, progressively building a Personal Finance Tracker. The exercises are designed to reinforce Rust concepts while developing a practical, real-world application.
 
-The name comes from the official documentation name for the people that use Rust - *Rustaceans*, respectively one person - *Rustacean*, and some customization from my side - *Rustaceaner*.
-
-Here will be described the whole path from first search about Rust to the time to move to another repository for a serious project using Rust.
-
-**Note:** The whole path is described using MacOS.
+## Features
+✅ Reinforces Rust concepts with **practical** exercises\
+✅ Provides a **real-world** use case for each chapter\
+✅ Encourages **progressive learning** — each exercise builds on previous ones\
+✅ Ends with a complete, functional CLI **application**
 
 ## Chapters
-- [Information](#information)
-- [Learning path](#learning-path)
-- [Hello World](#hello-world)
-- [Guess number](#guess-number)
+0. Cheat Sheet
+* Provide Rust cheat sheet
 
-## Information
-**Search:** How hard is to learn Rust.\
-**Prompt:** *rust compared to other languages*.\
-**Result**: [Rust difficulty in comparison to other languages.](https://www.reddit.com/r/rust/comments/op2r7e/rust_difficulty_in_comparison_to_other_languages/?rdt=40201)
+1. Getting Started
+* Setup Rust environment
+* Create a basic "Hello, world!" CLI
 
-**Search:** How popular is the language.\
-**Prompt:** *rust popularity*.\
-**Result:** [Rust continues to be the most-admired programming language](https://www.reddit.com/r/rust/comments/1eb55ab/rust_continues_to_be_the_mostadmired_programming/).
+2. Variables and Mutability
+* Store balance, income, and expenses
+* Update mutable variables based on transactions
 
-**Search:** How paid is Rust.\
-**Prompt:** *rust salary*.\
-**Result:** [Rust Developer salary](https://web3.career/web3-salaries/rust-developer).
+3. Data Types
+* Use integers, floats, and booleans for financial calculations
+* Define an enum for transaction type (Income/Expense)
 
-## Learning path
-There are a lot of free resources to learn. Searching for most suitable for me, I came to the conclusion that the official documentation will be the best starting point. I started with [The Rust Programming Language](https://doc.rust-lang.org/book/title-page.html) book *by Steve Klabnik and Carol Nichols, with contributions from the Rust Community*.
+4. Functions
+* Modularize logic (e.g., add_transaction, calculate_balance)
 
-## Prepare environment
-First step is to make Rust available on the local machine - MacOS.\
-In a terminal enter the command below to install Rust.
-```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-![Image 0.1](./media/image_0.1.png)
+5. Control Flow
+* Implement decision-making (e.g., validating user input)
 
-After Rust installation check if the programming language was installed successfully by using command below.
-```
-rustc --version
-```
+6. Ownership
+* Pass transaction data between functions while managing ownership
 
-Also, to make sure that the package manager was installed successfully use the command below.
-```
-cargo --version
-```
-![Image 0.2](./media/image_0.2.png)
+7. References and Borrowing
+* Optimize function signatures using references
 
-For the journey I use VS Code with *rust-analyzer* extension.\
-![Image 0.3](./media/image_0.3.png)
+8. Slices
+* Extract parts of strings for transaction descriptions
 
-## Hello world
-As a consacrated way of starting learn a programming language, first program written in that specific language is *Hello World* and here no exception.\
-The *Hello World* project will be stored in `chapter_1` directory. Use the commands below to create the working directory and to move to it.
-```
-mkdir chapter_1
-cd Rustaceaner/chapter_1 
-```
+9. Structs
+* Define Transaction struct with fields for date, amount, and category
 
-Create the first Rust file named `main.rs` paste the content from file with same name, and build it.
-```
-rustc main.rs 
-```
+10. Enums
+* Use enum for transaction categories
 
-After the file was built, execute it using the command below and the result will be displayed in the terminal.
-```
-./main 
-```
-![Image 1.1](./media/image_1.1.png)
+11. Generics
+* Implement a generic function for formatting reports
 
-## Hello cargo
-For projects with higher complexity than *Hello World* will be used `Cargo` package manager.\
-Initialize a new project using *cargo* package manager named `chapter_2` using the command below. The output will be a brand new project directory that contains `src` directory where all code will be located and the default *Hello World* file is generated. Also, there is generated `Cargo.toml` file that contains project metadata and all necessary dependencies for current project.
-```
-cargo new chapter_2
-```
-![Image 2.1](./media/image_2.1.png)
+12. Option & Result Enums
+* Handle errors when parsing user input
 
-As the default file `main.rs` is generated it can be built using a cargo command from below.
-```
-cargo build
-```
-After the building the project it can be run using the path to the project as per command below. By default, there is created working version that is fast compiled, but is not optimized and it is stored in `target/debug` subdirectory.
-```
-./target/debug/chapter_2 
-```
-![Image 2.2](./media/image_2.2.png)
+13. Vectors
+* Store multiple transactions in a Vec<Transaction>
 
-It can be run using cargo specific command - *cargo run*.
-```
-cargo run
-```
-![Image 2.3](./media/image_2.3.png)
+14. Modules and Visibility
+* Organize code into modules (transactions.rs, reports.rs)
 
-In development process it is antiproductive to build and run the project at every line of code that was written. To bust productivity during development process there is a specific command shown below that just will check the code.
-```
-cargo check
-```
-![Image 2.4](./media/image_2.4.png)
+15. Project Structure
+* Create a structured CLI with organized files
 
-If there is an error in the code as in example below, on line 2 are missing some elements, on check command the error will be catched.
-![Image 2.5](./media/image_2.5.png)
+16. Strings
+* Format output messages and store transaction descriptions
 
-After development phase, for production code there should be used another command to compile the code. This command optimize the code execution. It is slower in compiling, but faster in execution of the compiled code.
-```
-cargo run --release
-```
-![Image 2.6](./media/image_2.6.png)
+17. HashMaps
+* Track total spending per category using a HashMap<String, f64>
 
-When there are used a *crate* - Rust collection of source code, if it is necessary to update the version of the crates use the command below.\
-*Binary crate* - executable project, as *project_2* that ws created.\
-*Library crate* - code to be used in other projects, non-executable.
-```
-cargo update
-```
-The structure of the project after run for development and for production purpose is as per image below.\
-![Image 2.7](./media/image_2.7.png)
+18. File I/O
+* Read/write transactions to a JSON or CSV file
 
-## Guess number
-Initialize the 3rd chapter for a new project.
-```
-cargo new chapter_3
-```
+19. Error Handling
+* Handle file read/write errors gracefully
 
-Replace the content of the `main.rs` with the content from below. Check the code and run it - compile and execute.
-```
-use std::io;
+20. Traits
+* Implement Display and FromStr for Transaction
 
-fn main() {
-    println!("Guess the number!");
+21. Lifetimes
+* Manage borrowing in complex functions
 
-    println!("Please enter your guess number: ");
+22. Closures
+* Use closures for filtering transactions
 
-    let mut guess = String::new();
+23. Iterators
+* Process transactions efficiently with iterators
 
-    io::stdin()
-    .read_line(&mut guess)
-    .expect("Failed to read line");
+24. Concurrency (Threads & Async Rust)
+* Run report generation in parallel using threads
 
-    println!("You guessed: {}", guess);
-}
-```
-![Image 3.1](./media/image_3.1.png)
+25. Macros
+* Define a macro for logging/debugging
 
-Beside *errors* that can occur in the code, there are also *warnings*. If from code above delete the `expect` and the code will not handle possible erorrs, there will be a warning as in image below.\
-![Image 3.2](./media/image_3.2.png)
+26. Testing
+* Write unit tests for core functionality
 
-To use *crates* that are not built-in, there is need to add them in the *Cargo.toml* under *[dependencies]* section as per example below. And on new build apply it will install all necessary dependencies and the outside crates are usable in the code.
-```
-[dependencies]
-rand = "0.8.5"
-```
-![Image 3.3](./media/image_3.3.png)
-
-As the crates are new to the user, to read the documentation there should be run a special command to generate the documentation and open o local.
-```
-cargo doc --open
-```
-![Image 3.4](./media/image_3.4.png)
-
-Use the code from `chapter_3/src/main.rs` for the final version of the chapter and play with the second code created using Rust.
-![Image 3.5](./media/image_3.5.png)
+27. Final Project
+* Combine all concepts into a fully functional finance tracker
